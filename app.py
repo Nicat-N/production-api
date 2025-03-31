@@ -8,9 +8,9 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app, resources = {r"/api/news": {
-    "origins": ["https://github.com/Nicat-N"]
+    "origins": ["https://github.com/Nicat-N"],
     "methods": ["GET"]
-}})
+    }})
 
 def get_db_connection():
 
@@ -65,7 +65,5 @@ def get_news():
         return jsonify({"error": str(e)}), 500
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-else:
+if __name__ != "__main__":
     application = app
